@@ -2,9 +2,9 @@ import random
 
 import pytest
 
-from interface import InMemStore
-from service import HashInMemStor
-from types import KEY, VALUE
+from core.interfaces import InMemStore
+from core.services import HashInMemStore
+from core.types import KEY, VALUE
 
 
 def mock_key() -> KEY:
@@ -17,10 +17,10 @@ def mock_value() -> VALUE:
 
 @pytest.fixture(scope="function")
 def cache() -> InMemStore:
-    return HashInMemStor()
+    return HashInMemStore()
 
 
-class TestSetHashInMemStor:
+class TestSetHashInMemStore:
 
     def test_rise_error_if_key_is_null(self, cache: InMemStore):
         null_key = None
@@ -38,7 +38,7 @@ class TestSetHashInMemStor:
         cache.SET(key=key, value=mock_value())
 
 
-class TestGetHashInMemStor:
+class TestGetHashInMemStore:
     def test_get_value(self, cache: InMemStore):
         key = mock_key()
         value = mock_value()
