@@ -4,7 +4,7 @@ import pytest
 
 from interface import InMemStore
 from service import HashInMemStor
-from type import KEY, VALUE
+from types import KEY, VALUE
 
 
 def mock_key() -> KEY:

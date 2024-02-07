@@ -1,7 +1,7 @@
 from typing import Union
 
 from interface import InMemStore
-from type import KEY, SECOND, VALUE
+from types import KEY, SECOND, VALUE
 
 
 class HashInMemStore(InMemStore):

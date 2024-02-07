@@ -1,7 +1,7 @@
 from abc import ABC
 from typing import Union
 
-from type import KEY, VALUE, SECOND
+from types import KEY, VALUE, SECOND
 
 
 class InMemStore(ABC):
