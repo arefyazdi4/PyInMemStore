@@ -1,0 +1,48 @@
+Python Developer Interview Challenge: Implement a Mini Redis-like In-Memory Data Store
+
+
+Objective:
+Your task is to implement a simplified version of an in-memory key-value store similar to Redis using Python.
+This mini version, which we'll call "PyInMemStore", should support basic commands to store, retrieve, and manipulate data in memory.
+
+Requirements:
+
+    Data Structure: Implement an in-memory key-value store. The keys and values are strings.
+
+    Basic Commands:
+        SET key value: Stores the value at the specified key. Overwrites any existing value.
+
+        GET key: Returns the value associated with the key. If the key does not exist, return None.
+
+        DELETE key: Removes the key from the data store if it exists.
+
+        EXPIRE key seconds: Sets a key's time to live in seconds. After the time expires, the key
+        will automatically be deleted.
+
+        TTL key: Returns the remaining time to live (in seconds) of a key that has a timeout.
+         Return -1 if the key exists but does not have a timeout. Return -2 if the key does not exist.
+
+    Concurrency Support: The store should be thread-safe.
+     Multiple clients should be able to read/write to the store concurrently without causing data corruption.
+
+    Persistence (Optional, but a plus): Implement a way to persist the current state of the data store
+     to disk and reload it when the program restarts.
+
+
+Evaluation Criteria:
+
+    Correctness: The implementation should correctly handle the specified commands.
+
+    Code Quality: The code should be clean, readable, and well-organized.
+
+    Error Handling: The implementation should gracefully handle erroneous inputs or situations.
+
+    Efficiency: The data store should handle requests efficiently, even under concurrent access.
+
+
+Bonus Points:
+
+    Implement additional features such as transaction support (begin, commit, rollback),
+     or additional data types (lists, sets, sorted sets).
+
+    Include unit tests demonstrating the functionality and correctness of your implementation.
