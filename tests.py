@@ -62,3 +62,15 @@ class TestGetHashInMemStore:
         result = cache.GET(key=mock_key())
 
         assert result is None
+
+
+class TestDeleteHashInMemStore:
+    def test_raise_error_if_key_not_found(self, cache: InMemStore):
+        with pytest.raises(InMemStore.KeyNotFound):
+            cache.DELETE(key=mock_key())
+
+    def test_remove_key_successfully(self, cache: InMemStore):
+        key = mock_key()
+        cache.SET(key=key, value=mock_value())
+        cache.DELETE(key=key)
+

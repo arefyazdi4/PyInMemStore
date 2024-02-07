@@ -20,7 +20,10 @@ class HashInMemStore(InMemStore):
             return None
 
     def DELETE(self, key: KEY):
-        ...
+        try:
+            self.__store.__delitem__(key)
+        except KeyError:
+            raise InMemStore.KeyNotFound()
 
     def EXPIRE(self, key: KEY, second: SECOND):
         ...
